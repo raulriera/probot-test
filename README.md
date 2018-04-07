@@ -1,13 +1,199 @@
-THINGS
+Hello darkness, my old friend
+I've come to talk with you again
+Because a vision softly creeping
+Left its seeds while I was sleeping
+And the vision that was planted in my brain
+Still remains
+Within the sound of silence
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+In restless dreams I walked alone
+Narrow streets of cobblestone
+'Neath the halo of a street lamp
+I turned my collar to the cold and damp
+When my eyes were stabbed by the flash of a neon light
+That split the night
+And touched the sound of silence
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+And in the naked light I saw
+Ten thousand people, maybe more
+People talking without speaking
+People hearing without listening
+People writing songs that voices never share
+And no one dared
+Disturb the sound of silence
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+"Fools", said I, "You do not know
+Silence like a cancer grows
+Hear my words that I might teach you
+Take my arms that I might reach you"
+But my words, like silent raindrops fell
+And echoed
+In the wells of silence
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+And the people bowed and prayed
+To the neon god they made
+And the sign flashed out its warning
+In the words that it was forming
+And the sign said, "The words of the prophets are written on the subway walls
+And tenement halls"
+And whispered in the sounds of silence
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Hello darkness, my old friend
+I've come to talk with you again
+Because a vision softly creeping
+Left its seeds while I was sleeping
+And the vision that was planted in my brain
+Still remains
+Within the sound of silence
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+In restless dreams I walked alone
+Narrow streets of cobblestone
+'Neath the halo of a street lamp
+I turned my collar to the cold and damp
+When my eyes were stabbed by the flash of a neon light
+That split the night
+And touched the sound of silence
+
+And in the naked light I saw
+Ten thousand people, maybe more
+People talking without speaking
+People hearing without listening
+People writing songs that voices never share
+And no one dared
+Disturb the sound of silence
+
+"Fools", said I, "You do not know
+Silence like a cancer grows
+Hear my words that I might teach you
+Take my arms that I might reach you"
+But my words, like silent raindrops fell
+And echoed
+In the wells of silence
+
+And the people bowed and prayed
+To the neon god they made
+And the sign flashed out its warning
+In the words that it was forming
+And the sign said, "The words of the prophets are written on the subway walls
+And tenement halls"
+And whispered in the sounds of silence
+
+Hello darkness, my old friend
+I've come to talk with you again
+Because a vision softly creeping
+Left its seeds while I was sleeping
+And the vision that was planted in my brain
+Still remains
+Within the sound of silence
+
+In restless dreams I walked alone
+Narrow streets of cobblestone
+'Neath the halo of a street lamp
+I turned my collar to the cold and damp
+When my eyes were stabbed by the flash of a neon light
+That split the night
+And touched the sound of silence
+
+And in the naked light I saw
+Ten thousand people, maybe more
+People talking without speaking
+People hearing without listening
+People writing songs that voices never share
+And no one dared
+Disturb the sound of silence
+
+"Fools", said I, "You do not know
+Silence like a cancer grows
+Hear my words that I might teach you
+Take my arms that I might reach you"
+But my words, like silent raindrops fell
+And echoed
+In the wells of silence
+
+And the people bowed and prayed
+To the neon god they made
+And the sign flashed out its warning
+In the words that it was forming
+And the sign said, "The words of the prophets are written on the subway walls
+And tenement halls"
+And whispered in the sounds of silence
+
+Hello darkness, my old friend
+I've come to talk with you again
+Because a vision softly creeping
+Left its seeds while I was sleeping
+And the vision that was planted in my brain
+Still remains
+Within the sound of silence
+
+In restless dreams I walked alone
+Narrow streets of cobblestone
+'Neath the halo of a street lamp
+I turned my collar to the cold and damp
+When my eyes were stabbed by the flash of a neon light
+That split the night
+And touched the sound of silence
+
+And in the naked light I saw
+Ten thousand people, maybe more
+People talking without speaking
+People hearing without listening
+People writing songs that voices never share
+And no one dared
+Disturb the sound of silence
+
+"Fools", said I, "You do not know
+Silence like a cancer grows
+Hear my words that I might teach you
+Take my arms that I might reach you"
+But my words, like silent raindrops fell
+And echoed
+In the wells of silence
+
+And the people bowed and prayed
+To the neon god they made
+And the sign flashed out its warning
+In the words that it was forming
+And the sign said, "The words of the prophets are written on the subway walls
+And tenement halls"
+And whispered in the sounds of silence
+
+Hello darkness, my old friend
+I've come to talk with you again
+Because a vision softly creeping
+Left its seeds while I was sleeping
+And the vision that was planted in my brain
+Still remains
+Within the sound of silence
+
+In restless dreams I walked alone
+Narrow streets of cobblestone
+'Neath the halo of a street lamp
+I turned my collar to the cold and damp
+When my eyes were stabbed by the flash of a neon light
+That split the night
+And touched the sound of silence
+
+And in the naked light I saw
+Ten thousand people, maybe more
+People talking without speaking
+People hearing without listening
+People writing songs that voices never share
+And no one dared
+Disturb the sound of silence
+
+"Fools", said I, "You do not know
+Silence like a cancer grows
+Hear my words that I might teach you
+Take my arms that I might reach you"
+But my words, like silent raindrops fell
+And echoed
+In the wells of silence
+
+And the people bowed and prayed
+To the neon god they made
+And the sign flashed out its warning
+In the words that it was forming
+And the sign said, "The words of the prophets are written on the subway walls
+And tenement halls"
+And whispered in the sounds of silence
