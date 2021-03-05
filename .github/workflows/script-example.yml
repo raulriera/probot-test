@@ -20,11 +20,21 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
+            const labels = context.payload.issue.labels.map(item => item.name.toLowerCase()).join();
+            
+            const opts = github.issues.listComments.endpoint.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue.number
+            });
+
+            const comments = await github.paginate(opts)
+
+            console.log(comments)
+
+
             switch(context.payload.action) {
               case 'opened':
-                const labels = context.payload.issue.labels.map(item => item.name.toLowerCase()).join();
-
-                // Issue seems to be a bug, but has no domain
                 if (labels.includes("bug") && !labels.match(/domain:/g)) {
                   await github.issues.createComment({
                     issue_number: context.issue.number,
