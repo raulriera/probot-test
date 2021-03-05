@@ -15,7 +15,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: View context attributes
+      - name: Automatic triaging
         uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
@@ -25,11 +25,11 @@ jobs:
             const labels = context.payload.issue.labels;
             
             // Issue seems to be a bug, but has no domain
-            if labels.includes("Bug") && !labels.join().match(/Domain:/g) {
+            if (labels.includes("Bug") && !labels.join().match(/Domain:/g)) {
               await github.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: 'It looks like you are missing the `Domain` for this issue. Learn more here'
+                body: 'It looks like you are missing the Domain for this issue. Learn more here'
               });
             }
