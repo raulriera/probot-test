@@ -20,18 +20,7 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const labels = context.payload.issue.labels.map(item => item.name.toLowerCase()).join();
-            
-            const opts = github.issues.listComments.endpoint.merge({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.payload.issue.number
-            });
-
-            const comments = await github.paginate(opts)
-
-            console.log(comments)
-
+            const labels = context.payload.issue.labels.map(item => item.name.toLowerCase()).join()
 
             switch(context.payload.action) {
               case 'opened':
@@ -41,12 +30,31 @@ jobs:
                     owner: context.repo.owner,
                     repo: context.repo.repo,
                     body: 'It looks like you are missing the Domain for this issue. Learn more here'
-                  });
+                  })
                 }
                 
                 break;
               case 'labeled':
-              case 'unlabeled':
-                console.log(context.payload.label)
+                const label = context.payload.label.name
+                console.log(botComment())
                 break;
-            }            
+              case 'unlabeled':
+                const label = context.payload.label.name
+                console.log(botComment())
+
+                
+
+                break;
+            }
+
+            func botComment() {
+              const opts = github.issues.listComments.endpoint.merge({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number
+              })
+
+              const comments = await github.paginate(opts)
+
+              return comments.find(comment => comment.user.login == 'github-actions[bot]');
+            }         
