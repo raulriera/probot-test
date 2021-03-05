@@ -35,11 +35,11 @@ jobs:
                 
                 break;
               case 'labeled':
-                const label = context.payload.label.name
+                const newLabel = context.payload.label.name
                 console.log(botComment())
                 break;
               case 'unlabeled':
-                const label = context.payload.label.name
+                const oldLabel = context.payload.label.name
                 console.log(botComment())
 
                 
