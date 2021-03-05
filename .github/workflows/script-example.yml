@@ -4,7 +4,7 @@ name: Script example
 
 on:
   issues:
-    types: [opened]
+    types: [opened, labeled, unlabeled]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -20,20 +20,25 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            // See: https://octokit.github.io/rest.js/
-            const creator = context.payload.sender.login;
-            const labels = context.payload.issue.labels.map(item => item.name.toLowerCase()).join();
-            
-            console.log(labels);
-            console.log(labels.includes("bug"));
-            console.log(!labels.match(/domain:/g));
+            switch(context.payload.action) {
+              case 'opened':
+                const labels = context.payload.issue.labels.map(item => item.name.toLowerCase()).join();
 
-            // Issue seems to be a bug, but has no domain
-            if (labels.includes("bug") && !labels.match(/domain:/g)) {
-              await github.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: 'It looks like you are missing the Domain for this issue. Learn more here'
-              });
-            }
+                // Issue seems to be a bug, but has no domain
+                if (labels.includes("bug") && !labels.match(/domain:/g)) {
+                  await github.issues.createComment({
+                    issue_number: context.issue.number,
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    body: 'It looks like you are missing the Domain for this issue. Learn more here'
+                  });
+                }
+                
+                break;
+              case 'labeled':
+                console.log(context.payload)
+                break;
+              case 'unlabeled':
+                console.log(context.payload)
+                break;
+            }            
