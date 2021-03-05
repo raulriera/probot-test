@@ -24,6 +24,7 @@ jobs:
             const creator = context.payload.sender.login;
             const labels = context.payload.issue.labels.join().toLowerCase();
             
+            console.log(context.payload);
             console.log(labels);
             console.log(labels.includes("bug"));
             console.log(!labels.match(/domain:/g));
