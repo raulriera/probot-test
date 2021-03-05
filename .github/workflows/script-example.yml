@@ -22,10 +22,10 @@ jobs:
           script: |
             // See: https://octokit.github.io/rest.js/
             const creator = context.payload.sender.login;
-            const labels = context.payload.issue.labels;
+            const labels = context.payload.issue.labels.join().toLowerCase()
             
             // Issue seems to be a bug, but has no domain
-            if (labels.includes("Bug") && !labels.join().match(/Domain:/g)) {
+            if (labels.includes("bug") && !labels.match(/domain:/g)) {
               await github.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
