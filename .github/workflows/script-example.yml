@@ -20,39 +20,5 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const labels = context.payload.issue.labels.map(item => item.name.toLowerCase()).join()
-
-            switch(context.payload.action) {
-              case 'opened':
-                if (labels.includes("bug") && !labels.match(/domain:/g)) {
-                  await github.issues.createComment({
-                    issue_number: context.issue.number,
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    body: 'It looks like you are missing the Domain for this issue. Learn more here'
-                  })
-                }
-                
-                break
-              case 'labeled':
-                console.log(await botComment())
-                break
-              case 'unlabeled':
-                console.log(await botComment())
-
-                
-
-                break
-            }
-
-            async function botComment() {
-              const opts = github.issues.listComments.endpoint.merge({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.payload.issue.number
-              })
-
-              const comments = await github.paginate(opts)
-
-              return comments.find(comment => comment.user.login == 'github-actions[bot]');
-            }         
+            console.log(context)
+            
