@@ -36,9 +36,7 @@ jobs:
                 
                 break;
               case 'labeled':
-                console.log(context.payload)
-                break;
               case 'unlabeled':
-                console.log(context.payload)
+                console.log(context.payload.label)
                 break;
             }            
