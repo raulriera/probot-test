@@ -19,4 +19,17 @@ jobs:
         uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
-          script: console.log(context)
+          script: |
+            // See: https://octokit.github.io/rest.js/
+            const creator = context.payload.sender.login
+            const labels = context.payload.issue.labels
+            
+            // Issue seems to be a bug, but has no domain
+            if labels.includes("Bug") && !labels.join().match(/Domain:/g) {
+              await github.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: 'It looks like you are missing the `Domain` for this issue. Learn more here'
+              })
+            }
