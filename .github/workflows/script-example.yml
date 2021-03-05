@@ -35,11 +35,9 @@ jobs:
                 
                 break;
               case 'labeled':
-                const newLabel = context.payload.label.name
                 console.log(botComment())
                 break;
               case 'unlabeled':
-                const oldLabel = context.payload.label.name
                 console.log(botComment())
 
                 
@@ -47,7 +45,7 @@ jobs:
                 break;
             }
 
-            func botComment() {
+            function botComment() {
               const opts = github.issues.listComments.endpoint.merge({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
