@@ -33,19 +33,19 @@ jobs:
                   })
                 }
                 
-                break;
+                break
               case 'labeled':
                 console.log(await botComment())
-                break;
+                break
               case 'unlabeled':
                 console.log(await botComment())
 
                 
 
-                break;
+                break
             }
 
-            async function botComment() asyc {
+            async function botComment() {
               const opts = github.issues.listComments.endpoint.merge({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
