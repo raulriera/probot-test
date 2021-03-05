@@ -35,17 +35,17 @@ jobs:
                 
                 break;
               case 'labeled':
-                console.log(botComment())
+                console.log(await botComment())
                 break;
               case 'unlabeled':
-                console.log(botComment())
+                console.log(await botComment())
 
                 
 
                 break;
             }
 
-            function botComment() {
+            async function botComment() asyc {
               const opts = github.issues.listComments.endpoint.merge({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
