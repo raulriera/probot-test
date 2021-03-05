@@ -4,7 +4,7 @@ name: Script example
 
 on:
   issues:
-    types: [opened]
+    types: [opened, updated]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -22,8 +22,12 @@ jobs:
           script: |
             // See: https://octokit.github.io/rest.js/
             const creator = context.payload.sender.login;
-            const labels = context.payload.issue.labels.join().toLowerCase()
+            const labels = context.payload.issue.labels.join().toLowerCase();
             
+            console.log(labels);
+            console.log(labels.includes("bug"));
+            console.log(!labels.match(/domain:/g));
+
             // Issue seems to be a bug, but has no domain
             if (labels.includes("bug") && !labels.match(/domain:/g)) {
               await github.issues.createComment({
