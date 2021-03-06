@@ -6,7 +6,7 @@ on:
   issue_comment:
      types: [created]
   issues:
-    types: [opened, commented]
+    types: [opened]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -38,56 +38,46 @@ jobs:
             2. Comment to this issue with \`/triaged\` once you have updated the issue.
             `
 
-            if (context.eventName === 'issues') {
-              switch (context.payload.action) {
-                case 'opened': {
-                  if (isBug && !isTriaged) {
-                    await github.issues.createComment({
-                      issue_number: context.payload.issue.number,
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      body: botMessage
-                    })
-                  }
-
-                  break
-                }
-              } 
-            } else if (context.eventName === 'issue_comment') {
-                switch (context.payload.action) {
-                  case 'created': {
-                    if (context.payload.comment.body === '/triaged') {
-                      const comment = await botComment()
-
-                      if (isBug && isTriaged && comment !== undefined) {
-                        await github.issues.updateComment({
-                          owner: context.repo.owner,
-                          repo: context.repo.repo,
-                          comment_id: comment.id,
-                          body: '👍 Thanks for your contributing.'
-                        })
-                      }
-
-                      await github.reactions.createForIssueComment({
-                        owner: context.repo.owner,
-                        repo: context.repo.repo,
-                        comment_id: context.payload.comment.id,
-                        content: isTriaged ? '+1' : '-1' ,
-                      });
-                    } 
-                    break
-                  }
-                }
-              }
-
-              async function botComment() {
-                const opts = github.issues.listComments.endpoint.merge({
+            if (context.eventName === 'issues' && context.payload.action === 'opened') {
+              if (isBug && !isTriaged) {
+                await github.issues.createComment({
+                  issue_number: context.payload.issue.number,
                   owner: context.repo.owner,
                   repo: context.repo.repo,
-                  issue_number: context.payload.issue.number
+                  body: botMessage
                 })
-
-                const comments = await github.paginate(opts)
-                return comments.find(comment => comment.user.login == 'github-actions[bot]');
               }
+            } 
+            else if (context.eventName === 'issue_comment' && context.payload.action === 'created') {
+              if (context.payload.comment.body === '/triaged') {
+                const comment = await botComment()
+
+                if (isBug && isTriaged && comment !== undefined) {
+                  await github.issues.updateComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    comment_id: comment.id,
+                    body: '👍 Thanks for your contributing.'
+                  })
+                }
+
+                await github.reactions.createForIssueComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: context.payload.comment.id,
+                  content: isTriaged ? '+1' : '-1' ,
+                })
+              } 
+            }
+
+            async function botComment() {
+              const opts = github.issues.listComments.endpoint.merge({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number
+              })
+
+              const comments = await github.paginate(opts)
+              return comments.find(comment => comment.user.login == 'github-actions[bot]');
+            }
 
