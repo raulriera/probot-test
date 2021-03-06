@@ -4,7 +4,7 @@ name: Script example
 
 on:
   issues:
-    types: [opened, labeled, unlabeled]
+    types: [opened, commented]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
