@@ -1,4 +1,4 @@
-module.exports = ({github, context}) => {
+module.exports = async ({github, context}) => {
   const labels = context.payload.issue.labels.map(item => item.name.toLowerCase()).join()
 
   const isBug = labels.includes("bug")
