@@ -7,7 +7,7 @@ on:
     types: [opened]
 
 jobs:
-  echo-input:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,4 +15,4 @@ jobs:
         with:
           script: |
             const script = require(`${process.env.GITHUB_WORKSPACE}/scripts/concierge.js`)
-            script({github, context})
+            await script({github, context})
