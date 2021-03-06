@@ -3,6 +3,8 @@
 name: Script example
 
 on:
+  issue_comment:
+     types: [created]
   issues:
     types: [opened, commented]
 
