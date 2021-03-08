@@ -32,7 +32,7 @@ jobs:
             `
 
             if (context.eventName === 'issues' && context.payload.action === 'labeled' && context.payload.label.name.toLowerCase()== 'bug') {
-              if (isBug && !isTriaged) {
+              if (!isTriaged) {
                 await github.issues.createComment({
                   issue_number: context.payload.issue.number,
                   owner: context.repo.owner,
