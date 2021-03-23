@@ -15,6 +15,7 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
+            console.log("Actor is: " + GITHUB_ACTOR)
             const labels = context.payload.issue.labels.map(item => item.name.toLowerCase()).join()
 
             const isDomainIncluded = new RegExp('domain:*', 'g');
