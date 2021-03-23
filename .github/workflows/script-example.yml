@@ -20,7 +20,7 @@ jobs:
             const isDomainIncluded = new RegExp('domain:*', 'g');
             const isPriorityIncluded = new RegExp('p[0-3]', 'g');
             const isTriaged = isDomainIncluded.test(labels) && isPriorityIncluded.test(labels)
-            
+
             const botMessage = `
             **⚠️ Missing information**
 
@@ -39,17 +39,16 @@ jobs:
                   body: botMessage
                 })
               }
-            } 
+            }
             else if (context.eventName === 'issue_comment' && context.payload.action === 'created') {
               if (context.payload.comment.body === '/triaged') {
                 const comment = await botComment()
 
                 if (isTriaged && comment !== undefined) {
-                  await github.issues.updateComment({
+                  await github.issues.deleteComment({
                     owner: context.repo.owner,
                     repo: context.repo.repo,
-                    comment_id: comment.id,
-                    body: '👍 Thank you for triaging this issue.'
+                    comment_id: comment.id
                   })
                 }
 
@@ -57,9 +56,9 @@ jobs:
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   comment_id: context.payload.comment.id,
-                  content: isTriaged ? '+1' : '-1' ,
+                  content: isTriaged ? '+1' : '-1'
                 })
-              } 
+              }
             }
 
             async function botComment() {
