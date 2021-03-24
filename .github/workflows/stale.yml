@@ -6,7 +6,7 @@ on:
 #   - cron: "5 * * * *"
 
 jobs:
-  priority_zero_issues_check:
+  'P0 checks':
 
     runs-on: ubuntu-latest
 
