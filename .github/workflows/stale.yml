@@ -1,8 +1,8 @@
-name: Mark stale issues and pull requests
+name: Check priority labels
 
 on:
   schedule:
-  - cron: "30 1 * * *"
+  - cron: "0 15 * * *"
 
 jobs:
   priority_zero_issues_check:
