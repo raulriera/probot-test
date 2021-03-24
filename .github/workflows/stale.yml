@@ -1,8 +1,9 @@
 name: Check priority labels
 
 on:
-  schedule:
-  - cron: "5 * * * *"
+  workflow_dispatch:
+#   schedule:
+#   - cron: "5 * * * *"
 
 jobs:
   priority_zero_issues_check:
