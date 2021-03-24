@@ -2,7 +2,7 @@ name: Check priority labels
 
 on:
   schedule:
-  - cron: "0 15 * * *"
+  - cron: "5 * * * *"
 
 jobs:
   priority_zero_issues_check:
