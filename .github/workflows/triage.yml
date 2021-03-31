@@ -14,4 +14,8 @@ jobs:
         globs: |
           P[0-3]
           Domain:*
-        message: '**Missing information**\n Please see our CONTRIBUTING.md for more information.'
+        message: |
+          **⚠️ Missing information**
+          Please see our CONTRIBUTING.md for more information.
+          
+          When you are ready, please comment to this issue with `/triaged`
