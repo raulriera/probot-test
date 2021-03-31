@@ -1,0 +1,17 @@
+name: "Issue triage"
+on:
+  issue_comment:
+    types: [created]
+  issues:
+    types: [labeled]
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: raulriera/triage-action@main
+      with:
+        globs: |
+          P[0-3]
+          Domain:*
+        message: '**Missing information**\n Please see our CONTRIBUTING.md for more information.'
