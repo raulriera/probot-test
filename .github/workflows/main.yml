@@ -1,0 +1,16 @@
+name: Label and unlabeled something
+
+on:
+  issues:
+    types: [labeled, unlabeled]
+
+jobs:
+  debugging:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testing
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            console.log(context)
