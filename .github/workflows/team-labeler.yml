@@ -1,0 +1,60 @@
+name: Label and unlabeled something
+
+on:
+  issues:
+    types: [labeled, unlabeled]
+
+jobs:
+  debugging:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testing
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const labels = content.payload.issue.labels.map(label => label.name.toLowerCase())
+            const label = context.payload.label.name.toLowerCase()
+
+            const mappings = {
+              "Foundations": ["login", "search", "smart grid", "support", "settings", "app bridge"],
+              "Hardware": ["hardware"],
+              "Checkout": ["cart", "checkout"],
+              "Payments": ["payments"],
+              "Features 1/2": ["local fulfillment", "orders", "products", "returns & exchanges"],
+              "Features 3/4": ["customers", "analytics", "staff", "cash tracking", "gift cards", "product recommendations", "third party apps"],
+            }
+
+            const findOwner = (label, labels, action) => {
+              const isDomain = /domain:*/i.test(label)
+              if (!isDomain) return
+
+              const teams = Object.keys(mappings)
+              const team = teamIn(label, teams)
+              const isTeamPresent = teams.some(team => labels.includes(team))
+
+              if (action === "labeled" && !isTeamPresent && team) {
+                // Tag the issue with the team label
+                console.log(`Should add the label "${team}" here`)
+              } else if (action === "unlabeled" && isTeamPresent && team) {
+                // Untag the issue with the team label
+                console.log(`Should remove the label "${team}" here`)
+              }
+            }
+
+            const teamIn = (label, teams) => {
+              for (let i = 0; i < teams.length; i++) {
+                const team = teams[i]
+                const domains = mappings[team].map(domain => `domain: ${domain}`)
+                const shouldTag = domains.includes(label.toLowerCase())
+
+                if (shouldTag) {
+                  return team
+                }
+              }
+
+              return undefined
+            }
+            
+            // call the actual thing
+            findOwner(label, labels, context.payload.action)
