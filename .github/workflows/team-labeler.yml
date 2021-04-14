@@ -25,7 +25,7 @@ jobs:
               "Features 3/4": ["customers", "analytics", "staff", "cash tracking", "gift cards", "product recommendations", "third party apps"],
             }
 
-            async const findOwner = (label, labels, action) => {
+            const findOwner = async (label, labels, action) => {
               const isDomain = /domain:*/i.test(label)
               if (!isDomain) return
 
@@ -36,21 +36,23 @@ jobs:
               if (action === "labeled" && !isTeamPresent && team) {
                 // Tag the issue with the team label
                 console.log(`Should add the label "${team}" here`)
+                
                 await github.issues.addLabels({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: context.payload.issue.number,
                   labels: [team]
-                });
+                })
               } else if (action === "unlabeled" && isTeamPresent && team) {
                 // Untag the issue with the team label
                 console.log(`Should remove the label "${team}" here`)
+                
                 await github.issues.removeLabel({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: context.payload.issue.number,
                   name: team
-                });
+                })
               }
             }
 
