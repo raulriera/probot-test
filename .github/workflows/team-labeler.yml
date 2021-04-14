@@ -13,7 +13,7 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const labels = content.payload.issue.labels.map(label => label.name.toLowerCase())
+            const labels = context.payload.issue.labels.map(label => label.name.toLowerCase())
             const label = context.payload.label.name.toLowerCase()
 
             const mappings = {
